@@ -25,7 +25,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
     <Select
       disabled={disabled}
       value={selectedValue}
-      onChange={(e) => !disabled && onChange?.(e.target.value)}
+      onChange={e => !disabled && onChange?.(e.target.value)}
       backgroundColor={backgroundColor}
       data-testid="dropdown"
     >

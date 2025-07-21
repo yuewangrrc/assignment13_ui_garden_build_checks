@@ -9,7 +9,11 @@ const StyledTd = styled.td<{ $backgroundColor?: string; $disabled?: boolean }>`
   opacity: ${({ $disabled }) => ($disabled ? 0.6 : 1)};
 `;
 
-export const TableCell: React.FC<TableCellProps> = ({ content, backgroundColor, disabled }) => (
+export const TableCell: React.FC<TableCellProps> = ({
+  content,
+  backgroundColor,
+  disabled,
+}) => (
   <StyledTd $backgroundColor={backgroundColor} $disabled={disabled}>
     {content}
   </StyledTd>

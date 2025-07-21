@@ -1,4 +1,4 @@
-import React, { ReactElement, isValidElement, cloneElement } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import type { TableRowProps } from './Table row.types';
 
@@ -13,14 +13,21 @@ const StyledTr = styled.tr<{
   pointer-events: ${({ $disabled }) => ($disabled ? 'none' : 'auto')};
 `;
 
-export const TableRow: React.FC<TableRowProps> = ({ children, backgroundColor, disabled }) => {
-const injectedChildren = React.Children.map(children, (child) => {
-  if (React.isValidElement(child)) {
-    const typedChild = child as ReactElement<{ backgroundColor?: string; disabled?: boolean }>;
-    return React.cloneElement(typedChild, { backgroundColor, disabled });
-  }
-  return child;
-});
+export const TableRow: React.FC<TableRowProps> = ({
+  children,
+  backgroundColor,
+  disabled,
+}) => {
+  const injectedChildren = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      const typedChild = child as ReactElement<{
+        backgroundColor?: string;
+        disabled?: boolean;
+      }>;
+      return React.cloneElement(typedChild, { backgroundColor, disabled });
+    }
+    return child;
+  });
 
   return (
     <StyledTr $backgroundColor={backgroundColor} $disabled={disabled}>

@@ -16,6 +16,14 @@ const StyledTh = styled.th<{ backgroundColor?: string; disabled?: boolean }>`
   }
 `;
 
-export const TableHeader: React.FC<TableHeaderProps> = ({ title, backgroundColor, disabled }) => {
-  return <StyledTh backgroundColor={backgroundColor} disabled={disabled}>{title}</StyledTh>;
+export const TableHeader: React.FC<TableHeaderProps> = ({
+  title,
+  backgroundColor,
+  disabled,
+}) => {
+  return (
+    <StyledTh backgroundColor={backgroundColor} disabled={disabled}>
+      {title}
+    </StyledTh>
+  );
 };

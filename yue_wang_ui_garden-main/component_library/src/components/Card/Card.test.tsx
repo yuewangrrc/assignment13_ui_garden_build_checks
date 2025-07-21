@@ -19,4 +19,3 @@ describe('Card component', () => {
     expect(card).toHaveStyle('cursor: not-allowed');
   });
 });
-

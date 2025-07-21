@@ -8,7 +8,8 @@ const StyledImg = styled.img<{ disabled?: boolean; backgroundColor?: string }>`
   background-color: ${({ backgroundColor, disabled }) =>
     disabled ? '#ccc' : backgroundColor || 'transparent'};
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
-  cursor: ${({ disabled, onClick }) => (disabled ? 'not-allowed' : onClick ? 'pointer' : 'default')};
+  cursor: ${({ disabled, onClick }) =>
+    disabled ? 'not-allowed' : onClick ? 'pointer' : 'default'};
   display: block;
 `;
 

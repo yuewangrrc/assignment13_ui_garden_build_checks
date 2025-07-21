@@ -1,42 +1,52 @@
 # wang_yue_ui_garden_build_checks - Component Library
 
-This repository contains a React UI component library built with Vite and Storybook.
+React UI component library with automated code quality checks (Husky + ESLint + Prettier) and CI/CD pipeline.
 
----
+## Requirements
 
-## What you need installed before starting:
+- Docker
+- Node.js (v20+) and npm
+- Git
 
-- [Docker](https://www.docker.com/get-started) installed on your machine
-- Node.js and npm
+## Quick Start with Docker
 
----
+```bash
+# Build the Docker image
+docker build -t wang_yue_ui_garden_build_checks .
 
-## Running the Storybook UI with Docker
+# Run the container
+docker run -d -p 8018:8018 --name wang_yue_coding_assignment13 wang_yue_ui_garden_build_checks
 
-###
-1. Clone this repository
-
-Open a terminal in your preferred directory and run:
-
-```
-git clone https://github.com/yue-creator/wang_yue_ui_garden_build_checks.git
+# Access at http://localhost:8018
 ```
 
-2. Build the Docker image
+## Local Development
 
-Open a terminal in the `component_library` folder and run:
+```bash
+# Clone and install
+git clone https://github.com/yuewangrrc/assignment13_ui_garden_build_checks.git
+cd assignment13_ui_garden_build_checks/component_library
+npm install
 
+# Run Storybook
+npm run storybook
+
+# Code quality checks
+npm run lint          # ESLint
+npm run format:check  # Prettier
+npm test             # Tests
 ```
-docker build -t yue_wang_ui_garden_build_checks .
-```
 
-3. Run the Docker container
+## Code Quality Features
 
-```
-docker run -d -p 8083:80 --name yue_wang_coding_assignment13 yue_wang_ui_garden_build_checks
-```
+- **Pre-commit Hooks**: Automatically runs ESLint, Prettier, and tests before each commit
+- **GitHub Actions**: CI/CD pipeline runs quality checks on every push/PR
+- **Docker**: Serves on port 8018 with container name `wang_yue_coding_assignment13`
 
-4. Access the Storybook UI
-Open your web browser and navigate to:
-http://localhost:8083
+## Stop Container
+
+```bash
+docker stop wang_yue_coding_assignment13
+docker rm wang_yue_coding_assignment13
+```
 

@@ -16,6 +16,14 @@ const StyledText = styled.p<{ backgroundColor?: string; disabled?: boolean }>`
   }
 `;
 
-export const Text: React.FC<TextProps> = ({ content, backgroundColor, disabled }) => {
-  return <StyledText backgroundColor={backgroundColor} disabled={disabled}>{content}</StyledText>;
+export const Text: React.FC<TextProps> = ({
+  content,
+  backgroundColor,
+  disabled,
+}) => {
+  return (
+    <StyledText backgroundColor={backgroundColor} disabled={disabled}>
+      {content}
+    </StyledText>
+  );
 };

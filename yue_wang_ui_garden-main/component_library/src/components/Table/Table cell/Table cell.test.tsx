@@ -9,7 +9,9 @@ describe('TableCell component', () => {
   });
 
   it('has grey background and disabled cursor when disabled', () => {
-    const { getByText } = render(<TableCell content="Disabled Cell" disabled />);
+    const { getByText } = render(
+      <TableCell content="Disabled Cell" disabled />
+    );
     const cell = getByText('Disabled Cell');
     expect(cell).toHaveStyle('background-color: #ccc');
     expect(cell).toHaveStyle('cursor: not-allowed');

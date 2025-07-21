@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import type { LabelProps } from './Label.types';
 
-const StyledLabel = styled.span<{ backgroundColor?: string; disabled?: boolean }>`
+const StyledLabel = styled.span<{
+  backgroundColor?: string;
+  disabled?: boolean;
+}>`
   display: inline-block;
   padding: 4px 10px;
   background-color: ${({ backgroundColor, disabled }) =>
@@ -19,6 +22,14 @@ const StyledLabel = styled.span<{ backgroundColor?: string; disabled?: boolean }
   }
 `;
 
-export const Label: React.FC<LabelProps> = ({ text, backgroundColor, disabled }) => {
-  return <StyledLabel backgroundColor={backgroundColor} disabled={disabled}>{text}</StyledLabel>;
+export const Label: React.FC<LabelProps> = ({
+  text,
+  backgroundColor,
+  disabled,
+}) => {
+  return (
+    <StyledLabel backgroundColor={backgroundColor} disabled={disabled}>
+      {text}
+    </StyledLabel>
+  );
 };

@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 import type { ButtonProps } from './Button.types';
 
-const StyledButton = styled.button
-  .withConfig({
-    shouldForwardProp: (prop) => prop !== 'backgroundColor',
-  })<{
-    backgroundColor?: string;
-    disabled?: boolean;
-  }>`
-
+const StyledButton = styled.button.withConfig({
+  shouldForwardProp: prop => prop !== 'backgroundColor',
+})<{
+  backgroundColor?: string;
+  disabled?: boolean;
+}>`
   padding: 10px 20px;
   font-size: 16px;
 
@@ -34,7 +32,11 @@ export const Button: React.FC<ButtonProps> = ({
   backgroundColor,
 }) => {
   return (
-    <StyledButton onClick={onClick} disabled={disabled} backgroundColor={backgroundColor}>
+    <StyledButton
+      onClick={onClick}
+      disabled={disabled}
+      backgroundColor={backgroundColor}
+    >
       {label}
     </StyledButton>
   );

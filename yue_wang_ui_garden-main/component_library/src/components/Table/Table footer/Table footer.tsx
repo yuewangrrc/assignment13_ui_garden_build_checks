@@ -1,4 +1,4 @@
-import React, { cloneElement, isValidElement } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import type { TableFooterProps } from './Table footer.types';
 
@@ -14,10 +14,14 @@ const StyledTfoot = styled.tfoot<{
   width: 100%;
 `;
 
-export const TableFooter: React.FC<TableFooterProps> = ({ children, backgroundColor, disabled }) => {
+export const TableFooter: React.FC<TableFooterProps> = ({
+  children,
+  backgroundColor,
+  disabled,
+}) => {
   return (
     <StyledTfoot $backgroundColor={backgroundColor} $disabled={disabled}>
       {children}
     </StyledTfoot>
   );
-}
+};

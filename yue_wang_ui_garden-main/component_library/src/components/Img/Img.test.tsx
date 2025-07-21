@@ -4,9 +4,7 @@ import { Img } from './Img';
 
 describe('Img component', () => {
   it('is visible when rendered', () => {
-    const { getByAltText } = render(
-      <Img src="test.png" alt="Test image" />
-    );
+    const { getByAltText } = render(<Img src="test.png" alt="Test image" />);
     expect(getByAltText('Test image')).toBeVisible();
   });
 
@@ -19,4 +17,3 @@ describe('Img component', () => {
     expect(img).toHaveStyle('cursor: not-allowed');
   });
 });
-
