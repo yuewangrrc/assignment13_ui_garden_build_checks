@@ -41,5 +41,3 @@ export const Button: React.FC<ButtonProps> = ({
     </StyledButton>
   );
 };
-
-// changed styled button from const StyledButton = styled.button<{ backgroundColor?: string; disabled?: boolean }>` to current to remove redundant error message

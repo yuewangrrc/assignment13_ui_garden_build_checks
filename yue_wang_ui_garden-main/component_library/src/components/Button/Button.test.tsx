@@ -2,9 +2,9 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Button } from './Button';
 
-// Test Husky pre-commit hook
+// Test Husky pre-commit hook - second test
 describe('Button component', () => {
-  it('is visible with correct label', () => {
+  it('is visible with correct label11111', () => {
     const { getByText } = render(<Button label="Test Button" />);
     expect(getByText('Test Button')).toBeVisible();
   });
