@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Button } from './Button';
 
+// Test Husky pre-commit hook
 describe('Button component', () => {
   it('is visible with correct label', () => {
     const { getByText } = render(<Button label="Test Button" />);
